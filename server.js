@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res){
-  var message = process.env.POWERED_BY;
-  if (typeof(message) == "undefined") {
-  	message = "Deis"
+app.get('/index.html', function(req, res){
+  var message = process.env.POWERED_BY || "Deis";
+
+  if(Math.random()<.5){
+    process.exit(1);
   }
+
   res.send('Powered by ' + message);
 });
 
