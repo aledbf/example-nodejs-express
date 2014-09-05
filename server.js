@@ -1,10 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.get('/index.html', function(req, res){
+app.get('/', function(req, res){
   var message = process.env.POWERED_BY || "Deis";
-
-  if(Math.random()<.5){
+  // Simulate a "random" error that terminate exit(1) the application.
+  if(Math.random() < .5){
     process.exit(1);
   }
 
