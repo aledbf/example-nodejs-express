@@ -1,10 +1,10 @@
 {
   "name": "example-nodejs-express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": "0.10.x"
   },
   "dependencies": {
-    "express": "4.6.x"
+    "express": "4.11.x"
   }
 }

@@ -4,9 +4,11 @@ var app = express();
 app.get('/', function(req, res){
   var message = process.env.POWERED_BY || "Deis";
   // Simulate a "random" error that terminate exit(1) the application.
-  if(Math.random() < .5){
+  if(process.env.SIMULATE_ERRORS && Math.random() < .5){
     process.exit(1);
   }
+
+  console.log(JSON.stringify(req.headers));
 
   res.send('Powered by ' + message);
 });
